@@ -84,6 +84,21 @@ public class Operate {
 
             y.set(new NDIndex("0:2, :"), 999);
             System.out.println(y);
+
+            System.out.println(" --------------- ");
+
+            x = manager.arange(20f).reshape(4, 5);
+            System.out.println(x);
+            // 矩阵转换
+            x = x.transpose();
+            System.out.println(x);
+
+            System.out.println(" --------------- ");
+
+            NDArray a = manager.create(new float[][]{{1, 2, 3}, {2, 0, 4}, {3, 4, 5}});
+            System.out.println(a);
+            // 对称矩阵
+            System.out.println(a.eq(a.transpose()));
         }
     }
 }
