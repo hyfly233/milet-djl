@@ -99,6 +99,23 @@ public class Operate {
             System.out.println(a);
             // 对称矩阵
             System.out.println(a.eq(a.transpose()));
+
+            System.out.println(" --------------- ");
+
+            a = manager.arange(20f).reshape(5, 4);
+            // 通过分配新内存，将A的一个副本分配给B
+            NDArray b = a.duplicate();
+            System.out.println(a.add(b));
+
+            // 哈达玛积 矩阵相乘
+            System.out.println(a.mul(b));
+
+            // 非降维求和
+            System.out.println(a.sum(new int[]{1}, true));
+
+            // 沿 1 轴计算元素的累积总和
+            System.out.println(a.cumSum(1));
+
         }
     }
 }
